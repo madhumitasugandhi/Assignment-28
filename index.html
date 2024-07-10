@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<style>
+    body 
+    {
+            font-family: Arial, sans-serif;
+            background-color: #d4ac86;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+    }
+    .app-container 
+    {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: solid 1px black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px;
+            width: 100%;
+    }
+    .input-box
+    {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #bcbaba;
+            border-radius: 5px;
+    }
+    .app-heading 
+    {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+    }
+    .btn-calculate 
+    {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ee3b05;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+    }
+    .btn-calculate:hover 
+    {
+            background-color:#FE9900;
+    }
+    .test-result 
+    {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #333;
+    }
+</style>
+<body>
+ <div class="app-container">
+    <h1 class="app-heading"><u>Sum Calculator</u></h1>
+    Enter a number :
+    <input type="number" class="input-box" id="input-num1"/>
+    Enter a number :
+    <input type="number" class="input-box" id="input-num2"/>
+    <p class="test-result" id="test-result"></p>
+    <button type="button" class="btn-calculate" onclick="calsum()">Calculate</button>
+    <button type="button" class="btn-calculate" onclick="resetSum()">Reset</button>
+</div> 
+    <script>
+        const inputBox1 = document.getElementById("input-num1");
+        const inputBox2 = document.getElementById("input-num2");
+        const answertText = document.getElementById("test-result");
+        function calsum() 
+        {
+            const val1 = parseInt(inputBox1.value);
+            const val2 = parseInt(inputBox2.value);
+            const sum = val1 + val2;
+            answertText.innerText = `Answer: ${sum}`;
+        }
+        function resetSum()
+        {
+            inputBox1.value = "";
+            inputBox2.value = "";
+            answertText.innerText = "Answer:";
+        }
+    </script>
+</body>
+</html>
